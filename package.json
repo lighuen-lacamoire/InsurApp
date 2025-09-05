@@ -7,6 +7,15 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
+    "ios-start": "npx pod-install && react-native start",
+    "ios-run": "react-native run-ios",
+    "ios-clean": "cd ios && rm -rf Pods && pod install && cd ..",
+    "ad-start": "react-native start",
+    "ad-run": "SET ENVFILE=.env.local && react-native run-android",
+    "ad-clean": "cd android && ./gradlew clean",
+    "ad-fix-clean": "cd android && ./gradlew generateCodegenArtifactsFromSchema",
+    "ad-build": "SET ENVFILE=.env.prod && cd android && ./gradlew assembleRelease --no-daemon && cd ..",
+    "ad-release": "SET ENVFILE=.env.prod && react-native run-android --no-packager",
     "test": "jest"
   },
   "dependencies": {
